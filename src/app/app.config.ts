@@ -1,7 +1,8 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideRouter, withHashLocation, withViewTransitions } from '@angular/router';
 
 import { routes } from './app.routes';
+import { HttpClientModule } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -10,11 +11,12 @@ export const appConfig: ApplicationConfig = {
       routes,
       withViewTransitions({
         skipInitialTransition: true,
-        onViewTransitionCreated(transitionInfo){
-          console.log(transitionInfo)
-        }
       }),
       withHashLocation()
     ),
+
+    importProvidersFrom(
+      HttpClientModule,
+    )
   ]
 };

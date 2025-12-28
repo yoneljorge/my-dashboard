@@ -1,0 +1,10 @@
+{
+  "tailwindCSS.includeLanguages": {
+    "typescript": "html"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    "class\\s*=\\s*\"([^\"]*)\"",
+    "class:\\s*\"([^\"]*)\"",
+    "className\\s*=\\s*\"([^\"]*)\""
+  ]
+}
